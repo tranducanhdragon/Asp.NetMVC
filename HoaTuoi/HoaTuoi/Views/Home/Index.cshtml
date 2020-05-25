@@ -1,0 +1,45 @@
+﻿@model HoaTuoi.Models.EF.SlideHoa
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var slide = (List<HoaTuoi.Models.EF.SlideHoa>)ViewBag.Slide;
+}
+<div class="main-body">
+    <div id="slider">
+        @foreach (var item in slide)
+        {
+            <a href="#" target="_blank">
+                <img src="/Assets/Admin/images/@item.AnhDaiDien" alt="" />
+            </a>
+        } 
+    </div>
+    <div class="hr"></div>
+    <div class="grids">
+        <ul>
+            <li>
+                <img src="/Assets/Admin/images/HoaLoaKen.jpg">
+                <h3>Lorem Ipsum is simply</h3>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame</p>
+                <button>Read more</button>
+            </li>
+            <li>
+                <img src="/Assets/Admin/images/HoaThuocDuoc.jpg">
+                <h3>Lorem Ipsum is simply</h3>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame</p>
+                <button>Read more</button>
+            </li>
+            <li class="last">
+                <img src="/Assets/Admin/images/HoaSung.jpg">
+                <h3>Lorem Ipsum is simply</h3>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame</p>
+                <button>Read more</button>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="hr"></div>
+    <div class="text-box">
+        <p>Website bán hoa tươi xin kính chào và hẹn gặp lại quý khách</p>
+    </div>
+
+</div>

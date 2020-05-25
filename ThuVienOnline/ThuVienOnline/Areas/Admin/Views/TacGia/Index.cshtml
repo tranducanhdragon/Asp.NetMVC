@@ -1,0 +1,43 @@
+﻿@model PagedList.IPagedList<Model.EF.TacGia>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Quản lý Tác Giả
+}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <a href="/Admin/TacGia/Create">Thêm Tác Giả</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã Tác giả</th>
+                        <th>Tên Tác Giả</th>
+                        <th>Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.MaTG">
+                            <td>@item.MaTG</td>
+                            <td>@item.HoTen</td>
+                            <td>
+                                @*Dùng Ajax từ file js*@
+                                <a href="javascript:XoaTacGia(@item.MaTG)">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

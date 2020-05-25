@@ -1,0 +1,46 @@
+﻿@model PagedList.IPagedList<Model.EF.TheLoai>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Quản lý thể loại
+}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <a href="/Admin/TheLoai/Create">Thêm Thể Loại</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Tên thể loại</th>
+                        <th>Ảnh</th>
+                        <th>Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.MaTheLoai">
+                            <td>@item.TenTheLoai</td>
+                            <td><img src="~/Assets/Admin/pic/DanhMuc/@item.AnhDaiDien" width="50" height="50" /></td>
+                            <td>
+                                <a href="/Admin/TheLoai/Edit/@item.MaTheLoai">Sửa</a>
+                                @*Dùng Ajax từ file js*@
+                                <a href="javascript:XoaTheLoai(@item.MaTheLoai)" >Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

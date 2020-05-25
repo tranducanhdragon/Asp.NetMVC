@@ -1,0 +1,38 @@
+﻿@model List<HoaTuoi.Models.EF.GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-body">
+
+    <div class="hr"></div>
+    <div class="gallery">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Mã hoa</th>
+                    <th>Ngày tạo</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Công cụ</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr id="row_@item.IDHoa">
+                    <th>@item.IDHoa<label name="TenHoa"></label></th>
+                    <th>@item.NgayTao</th>
+                    <th>@item.SoLuongHoa</th>
+                    <th>@item.ThanhTien.Value.ToString("N0")</th>
+                    <th><a href="javascript:XoaCart(@item.IDHoa)">Xóa</a></th>
+                </tr>
+            }
+        </table>
+        <div class="clear"></div>
+    </div>
+    <div class="hr"></div>
+    <div class="text-box">
+        <p></p>
+    </div>
+
+</div>

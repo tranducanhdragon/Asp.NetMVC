@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<Model.EF.TaiKhoan>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Quản lý tài khoản
+}
+
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Bảng Tài Khoản</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Tên tài khoản</th>
+                        <th>Mật khẩu</th>
+                        <th>Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.MaTaiKhoan">
+                            <td>@item.TenDangNhap</td>
+                            <td>@item.MatKhau</td>
+                            <td>
+                                <a href="/Admin/User/Edit/@item.MaTaiKhoan">Sửa</a>
+                                @*Dùng Ajax để xóa tài khoản*@
+                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.MaTaiKhoan }, new AjaxOptions
+                                {
+                                    Confirm = "Bạn có muốn xóa tài khoản này?",
+                                    OnComplete = "$('#row_" + @item.MaTaiKhoan + "').remove()",
+                                    HttpMethod = "Delete"
+                                })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model HoaTuoi.Models.EF.Hoa
+@{
+    ViewBag.Title = "AddCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AddCart", "CartHoa", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="feed">
+        <div class="feedback">
+            <h1>@Model.TenHoa</h1>
+            <form>
+                <div>
+                    <img src="/Assets/Admin/images/@Model.AnhDaiDien" height="100px" , width="150px" />
+                </div>
+                <div>
+                    <span><label>Giá tiền: @Model.GiaTien.ToString("N0") đ</label></span>
+                    Số lượng:
+                    <input type="number" name="SoLuongHoa" style="width:2cm;" />
+                </div>
+                <div>
+                    <input type="submit" value="Mua hàng" />
+                </div>
+            </form>
+        </div>
+        <div class="clear"></div>
+    </div>
+}
+

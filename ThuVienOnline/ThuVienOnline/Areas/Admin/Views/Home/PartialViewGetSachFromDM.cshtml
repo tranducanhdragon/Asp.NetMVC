@@ -1,0 +1,22 @@
+﻿@model PagedList.IPagedList<Model.EF.SachView>
+@using PagedList.Mvc
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Nhà xuất bản</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenSach</td>
+                <td>@item.HoTen</td>
+                <td>@item.TenNXB</td>
+            </tr>
+        }
+    </tbody>
+</table>

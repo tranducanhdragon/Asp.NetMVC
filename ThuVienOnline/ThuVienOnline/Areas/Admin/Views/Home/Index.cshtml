@@ -1,0 +1,35 @@
+﻿@model PagedList.IPagedList<Model.EF.TheLoai>
+@using PagedList.Mvc;
+@{
+    ViewBag.Tittle = "Trang Chủ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    Trang Chủ
+}
+<div class="card mb-4">
+    <div class="card-header">
+        Header
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    @foreach (var row in Model.GroupBy(item => item.MaTheLoai / 3))
+                    {
+                        <tr>
+                            @foreach (var item in row)
+                            {
+                                <td>
+                                    <a href="javascript:GetSachFromDM(@item.MaTheLoai)">@item.TenTheLoai</a>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </thead>
+            </table>
+            @* PartialView GetSachFromDM *@
+            <div id="SachFromDM"></div>
+        </div>
+    </div>
+</div>

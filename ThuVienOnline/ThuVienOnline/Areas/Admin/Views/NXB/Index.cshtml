@@ -1,0 +1,44 @@
+﻿@model PagedList.IPagedList<Model.EF.NXB>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Quản lý Nhà Xuất Bản
+}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <a href="/Admin/NXB/Create">Thêm NXB</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Tên NXB</th>
+                        <th>Ảnh</th>
+                        <th>Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.MaNXB">
+                            <td>@item.TenNXB</td>
+                            <td><img src="~/Assets/Admin/pic/NXB/@item.AnhDaiDien" width="50" height="50" /></td>
+                            <td>
+                                <a href="/Admin/NXB/Edit/@item.MaNXB">Sửa</a>
+                                @*Dùng Ajax từ file js*@
+                                <a href="javascript:XoaNXB(@item.MaNXB)">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
