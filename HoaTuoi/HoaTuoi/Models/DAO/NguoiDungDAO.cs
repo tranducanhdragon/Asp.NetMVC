@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using HoaTuoi.Models.EF;
@@ -27,9 +28,17 @@ namespace HoaTuoi.Models.DAO
         }
         public void NguoiDungInsert(NguoiDung nguoidung)
         {
-            nguoidung.IDNguoiDung = db.NguoiDungs.ToList().Last().IDNguoiDung + 1;
-            db.NguoiDungs.Add(nguoidung);
-            db.SaveChanges();
+            object[] para = new SqlParameter[]
+            {
+                new SqlParameter("@TenNguoiDung",nguoidung.TenNguoiDung),
+                new SqlParameter("@MatKhau",nguoidung.MatKhau),
+                new SqlParameter("@TenDangNhap",nguoidung.TenDangNhap),
+                new SqlParameter("@DiaChi",nguoidung.DiaChi),
+                new SqlParameter("@DienThoai",nguoidung.DienThoai),
+                new SqlParameter("@Email",nguoidung.Email),
+                new SqlParameter("@Quyen",nguoidung.Quyen)
+            };
+            db.Database.ExecuteSqlCommand("NguoiDung_InsertProc @TenNguoiDung, @MatKhau, @TenDangNhap, @DiaChi, @DienThoai, @Email, @Quyen", para);
         }
         public NguoiDung NguoiDungByID(int id)
         {

@@ -25,17 +25,28 @@ namespace HoaTuoi.Controllers
         [ChildActionOnly]
         public ActionResult PartialViewSoSanPham()
         {
-            var li = new List<GioHang>();
+            var nd = (NguoiDung)Session["NguoiDungSession"];
+            var li = new List<Mua>();
             dynamic multimodel = new ExpandoObject();
             multimodel.SoLuongHoa = 0;
             multimodel.ThanhTien = 0;
+            if(nd != null)
+            {
+                multimodel.TenDangNhap = nd.TenDangNhap;
+                multimodel.TenNguoiDung = nd.TenNguoiDung;
+            }
+            else
+            {
+                multimodel.TenDangNhap = "";
+                multimodel.TenNguoiDung = "";
+            }
             if(Session["CartSession"] != null)
             {
-                li = (List<GioHang>)Session["CartSession"];
+                li = (List<Mua>)Session["CartSession"];
                 foreach(var item in li)
                 {
-                    multimodel.SoLuongHoa += item.SoLuongHoa;
-                    multimodel.ThanhTien += item.ThanhTien;                    
+                    multimodel.SoLuongHoa += item.SoLuong;
+                                        
                 }
             }
             return PartialView(multimodel);

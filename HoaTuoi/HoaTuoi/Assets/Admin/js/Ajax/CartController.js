@@ -1,6 +1,6 @@
-﻿function XoaCart(IDHoa) {
+﻿function XoaMua(IDHoa) {
     if (confirm("Bạn có muốn xóa loại hoa này?")) {
-        $.post("/CartHoa/DeleteCart",
+        $.post("/CartHoa/DeleteMua",
                 {
                     "IDHoa": IDHoa,
                 },

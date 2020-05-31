@@ -49,6 +49,7 @@ namespace HoaTuoi.Controllers
         public ActionResult SignUp(NguoiDung user)
         {
             var dao = new NguoiDungDAO();
+            user.Quyen = 1;
             dao.NguoiDungInsert(user);
             return RedirectToAction("Index", "Home");
         }

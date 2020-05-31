@@ -7,8 +7,7 @@ using HoaTuoi.Models.EF;
 namespace HoaTuoi.Models.DAO
 {
     public class HoaDAO
-    {
-        HoaTuoiDBContext db = null;
+    {HoaTuoiDBContext db = null;
         public HoaDAO()
         {
             db = new HoaTuoiDBContext();
@@ -17,9 +16,10 @@ namespace HoaTuoi.Models.DAO
         {
             return db.Hoas.OrderBy(x => x.IDHoa).ToList();
         }
-        public Hoa HoaByID(int id)
+        public Hoa HoaByID(int? id)
         {
             return db.Hoas.Find(id);
         }
+        
     }
 }

@@ -12,7 +12,7 @@ namespace HoaTuoi.Models.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hoa()
         {
-            GioHangs = new HashSet<GioHang>();
+            Muas = new HashSet<Mua>();
         }
 
         [Key]
@@ -29,7 +29,11 @@ namespace HoaTuoi.Models.EF
         [StringLength(100)]
         public string AnhDaiDien { get; set; }
 
+        public int? IDDanhMuc { get; set; }
+
+        public virtual DanhMuc DanhMuc { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GioHang> GioHangs { get; set; }
+        public virtual ICollection<Mua> Muas { get; set; }
     }
 }

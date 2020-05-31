@@ -23,6 +23,8 @@ namespace HoaTuoi.Models.EF
         [StringLength(50)]
         public string TenNguoiDung { get; set; }
 
+        [Required]
+        [StringLength(50)]
         public string MatKhau { get; set; }
 
         [Required]
@@ -33,11 +35,15 @@ namespace HoaTuoi.Models.EF
         [StringLength(100)]
         public string DiaChi { get; set; }
 
+        [Required]
+        [StringLength(50)]
         public string DienThoai { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
+
+        public int? Quyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }

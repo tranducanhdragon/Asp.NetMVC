@@ -1,4 +1,4 @@
-﻿@model List<HoaTuoi.Models.EF.GioHang>
+﻿@model List<HoaTuoi.Models.EF.Mua>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,18 +13,16 @@
                     <th>Mã hoa</th>
                     <th>Ngày tạo</th>
                     <th>Số lượng</th>
-                    <th>Thành tiền</th>
                     <th>Công cụ</th>
                 </tr>
             </thead>
             @foreach (var item in Model)
             {
                 <tr id="row_@item.IDHoa">
-                    <th>@item.IDHoa<label name="TenHoa"></label></th>
-                    <th>@item.NgayTao</th>
-                    <th>@item.SoLuongHoa</th>
-                    <th>@item.ThanhTien.Value.ToString("N0")</th>
-                    <th><a href="javascript:XoaCart(@item.IDHoa)">Xóa</a></th>
+                    <th>@item.IDHoa</th>
+                    <th>@DateTime.Now</th>
+                    <th>@item.SoLuong</th>
+                    <th><a href="javascript:XoaMua(@item.IDHoa)">Xóa</a></th>
                 </tr>
             }
         </table>
@@ -32,7 +30,7 @@
     </div>
     <div class="hr"></div>
     <div class="text-box">
-        <p></p>
+        <p><a href="/CartHoa/ThanhToan">Thanh Toán</a></p>
     </div>
 
 </div>

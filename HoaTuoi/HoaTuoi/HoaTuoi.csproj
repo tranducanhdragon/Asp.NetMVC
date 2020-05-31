@@ -210,14 +210,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\GioHangDAO.cs" />
     <Compile Include="Models\DAO\HoaDAO.cs" />
     <Compile Include="Models\DAO\NguoiDungDAO.cs" />
     <Compile Include="Models\DAO\SlideHoaDAO.cs" />
     <Compile Include="Models\EF\ChiTietDonHang.cs" />
+    <Compile Include="Models\EF\DanhMuc.cs" />
     <Compile Include="Models\EF\DonHang.cs" />
     <Compile Include="Models\EF\GioHang.cs" />
     <Compile Include="Models\EF\Hoa.cs" />
     <Compile Include="Models\EF\HoaTuoiDBContext.cs" />
+    <Compile Include="Models\EF\Mua.cs" />
     <Compile Include="Models\EF\NguoiDung.cs" />
     <Compile Include="Models\EF\SlideHoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -295,6 +298,7 @@
     <Content Include="Views\NguoiDung\Login.cshtml" />
     <Content Include="Views\NguoiDung\SignUp.cshtml" />
     <Content Include="Views\Home\PartialViewSoSanPham.cshtml" />
+    <Content Include="Views\CartHoa\ThanhToan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

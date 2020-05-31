@@ -9,12 +9,6 @@ namespace HoaTuoi.Models.EF
     [Table("ChiTietDonHang")]
     public partial class ChiTietDonHang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChiTietDonHang()
-        {
-            DonHangs = new HashSet<DonHang>();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDChiTietDonHang { get; set; }
@@ -33,7 +27,8 @@ namespace HoaTuoi.Models.EF
         [StringLength(100)]
         public string DiaChi { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public int? IDDonHang { get; set; }
+
+        public virtual DonHang DonHang { get; set; }
     }
 }

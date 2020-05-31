@@ -6,27 +6,23 @@ namespace HoaTuoi.Models.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DonHang")]
-    public partial class DonHang
+    [Table("DanhMuc")]
+    public partial class DanhMuc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DonHang()
+        public DanhMuc()
         {
-            ChiTietDonHangs = new HashSet<ChiTietDonHang>();
+            Hoas = new HashSet<Hoa>();
         }
 
         [Key]
-        public int IDDonHang { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDDanhMuc { get; set; }
 
-        public int IDNguoiDung { get; set; }
-
-        public int? IDGioHang { get; set; }
+        [StringLength(50)]
+        public string TenDanhMuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
-
-        public virtual GioHang GioHang { get; set; }
-
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual ICollection<Hoa> Hoas { get; set; }
     }
 }
