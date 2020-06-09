@@ -20,6 +20,10 @@ namespace Model.DAO
         {
             return db.TacGias.OrderByDescending(x => x.MaTG).ToPagedList(page, pageSize);
         }
+        public IEnumerable<TacGia> ListAll()
+        {
+            return db.TacGias.OrderByDescending(x => x.MaTG).ToList();
+        }
         public void Create(TacGia tg)
         {
             object para = new SqlParameter("@HoTen", tg.HoTen);

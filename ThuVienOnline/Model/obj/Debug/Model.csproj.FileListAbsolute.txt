@@ -11,4 +11,3 @@ C:\Users\Computer\Desktop\MVC\ThuVienOnline\Model\bin\Debug\PagedList.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\Model\bin\Debug\PagedList.Mvc.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\Model\obj\Debug\Model.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\Model\obj\Debug\Model.pdb
-C:\Users\Computer\Desktop\MVC\ThuVienOnline\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

@@ -43,7 +43,12 @@ C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Newtonsoft.Json.dl
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Owin.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\PagedList.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\PagedList.Mvc.dll
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Extensions.dll
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Formatting.dll
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Primitives.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Helpers.dll
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Http.dll
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Http.WebHost.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Mvc.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Optimization.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Razor.dll
@@ -60,6 +65,11 @@ C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.Applicat
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\PagedList.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\PagedList.Mvc.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Extensions.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Formatting.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Net.Http.Primitives.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Http.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Http.WebHost.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Helpers.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Mvc.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\System.Web.Optimization.xml
@@ -83,6 +93,7 @@ C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.Owin.Sec
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\obj\Debug\ThuVienOnline.csproj.App.config
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\obj\Debug\ThuVienOnline.csprojResolveAssemblyReference.cache
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\obj\Debug\ThuVienOnline.dll
 C:\Users\Computer\Desktop\MVC\ThuVienOnline\ThuVienOnline\obj\Debug\ThuVienOnline.pdb
