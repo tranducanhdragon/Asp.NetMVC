@@ -18,7 +18,6 @@ namespace Model.EF
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDThe { get; set; }
 
         [Column(TypeName = "date")]

@@ -10,6 +10,7 @@ using Model.DAO;
 using Model.EF;
 using ThuVienOnline.Areas.Admin.Models;
 using PagedList;
+using ThuVienOnline.Areas.Admin.Models.Security;
 
 namespace ThuVienOnline.Areas.Admin.Controllers
 {
@@ -26,21 +27,17 @@ namespace ThuVienOnline.Areas.Admin.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var tg = response.Content.ReadAsAsync<IEnumerable<TacGiaApi>>().Result;
-                tg.ToPagedList(1, 10);
-                return View(tg);
             }
-            else
-            {
-                var dao = new TacGiaDAO();
-                var model = dao.ListAllPaging(page, pageSize);
-                return View(model);
-            } 
+            var dao = new TacGiaDAO();
+            var model = dao.ListAllPaging(page, pageSize);
+            return View(model);
         }
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+        [CustomAuthorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Create(TacGia tg)
         {
@@ -55,6 +52,7 @@ namespace ThuVienOnline.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+        [CustomAuthorize(Roles = "Admin")]
         [HttpPost]
         public void Delete(int MaTG)
         {

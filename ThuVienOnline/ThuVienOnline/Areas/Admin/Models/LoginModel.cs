@@ -12,6 +12,7 @@ namespace ThuVienOnline.Areas.Admin.Models
         public string UserName { set; get; }
         [Required(ErrorMessage = "Mời Nhập PassWord")]
         public string PassWord { set; get; }
+        public List<string> Roles { get; set; }
         
     }
 }

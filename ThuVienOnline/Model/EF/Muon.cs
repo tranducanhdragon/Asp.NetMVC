@@ -16,7 +16,6 @@ namespace Model.EF
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDMuon { get; set; }
 
         public int? IDThe { get; set; }

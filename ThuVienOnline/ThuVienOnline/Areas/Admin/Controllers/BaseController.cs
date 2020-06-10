@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Model.EF;
 
 namespace ThuVienOnline.Areas.Admin.Controllers
 {
@@ -11,7 +12,7 @@ namespace ThuVienOnline.Areas.Admin.Controllers
     {
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var session = (UserLogin)Session[Common.CommonConst.USER_SESSION];
+            var session = (Account)Session["UserLogin"];
             if(session == null)
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", Action = "Index", Area = "Admin" }));

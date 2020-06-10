@@ -1,4 +1,4 @@
-﻿namespace Model.EF
+namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -14,27 +14,18 @@
         public int MaSach { get; set; }
 
         [StringLength(50)]
-        [Required]
-        [Display(Name = "Tên Sách")]
         public string TenSach { get; set; }
 
         [StringLength(50)]
-        [Required]
-        [Display(Name ="Tên Tác Giả")]
         public string HoTen { get; set; }
 
         [StringLength(50)]
-        [Required]
-        [Display(Name = "Thể Loại")]
         public string TenTheLoai { get; set; }
 
         [StringLength(50)]
-        [Required]
-        [Display(Name = "Nhà Xuất Bản")]
         public string TenNXB { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "Ảnh Bìa")]
         public string AnhDaiDien { get; set; }
     }
 }

@@ -233,6 +233,8 @@
     <Compile Include="Areas\Admin\Controllers\TheThuVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\Security\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Areas\Admin\Models\Security\CustomPrincipal.cs" />
     <Compile Include="Areas\Admin\Models\TacGiaApi.cs" />
     <Compile Include="Common\CommonConst.cs" />
     <Compile Include="Controllers\TacGiaApiController.cs" />

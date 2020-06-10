@@ -69,10 +69,12 @@
     <Compile Include="DAO\TheLoaiDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\TheThuVienDAO.cs" />
+    <Compile Include="EF\Account.cs" />
     <Compile Include="EF\DocGia.cs" />
     <Compile Include="EF\Muon.cs" />
     <Compile Include="EF\NhanVien.cs" />
     <Compile Include="EF\NXB.cs" />
+    <Compile Include="EF\Role.cs" />
     <Compile Include="EF\Sach.cs" />
     <Compile Include="EF\SachView.cs" />
     <Compile Include="EF\TacGia.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="EF\TheThuVien.cs" />
     <Compile Include="EF\ThuVienOnlineDBContext.cs" />
     <Compile Include="EF\Tra.cs" />
+    <Compile Include="EF\UserInRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,26 +6,23 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TaiKhoan")]
-    public partial class TaiKhoan
+    [Table("Role")]
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TaiKhoan()
+        public Role()
         {
-            Roles = new HashSet<Role>();
+            TaiKhoans = new HashSet<TaiKhoan>();
         }
-
-        [StringLength(50)]
-        public string TenDangNhap { get; set; }
-
-        [StringLength(50)]
-        public string MatKhau { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MaTaiKhoan { get; set; }
+        public int IDRole { get; set; }
+
+        [StringLength(50)]
+        public string RoleName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
     }
 }

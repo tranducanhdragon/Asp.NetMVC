@@ -10,7 +10,6 @@ namespace Model.EF
     public partial class Tra
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDTra { get; set; }
 
         public int? IDMuon { get; set; }

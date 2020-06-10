@@ -56,16 +56,25 @@ namespace Model.DAO
         {
             return db.TaiKhoans.OrderByDescending(x => x.MaTaiKhoan).ToPagedList(page, pageSize);
         }
-        public bool Login(string userName, string passWord)
+        public Account Login(string userName, string passWord)
         {
-            var result = db.TaiKhoans.Count(x => x.TenDangNhap == userName && x.MatKhau == passWord);
-            if (result > 0)
+            var result = db.TaiKhoans.Where(x => x.TenDangNhap == userName && x.MatKhau == passWord).FirstOrDefault();
+            if (result != null)
             {
-                return true;
+                Account acc = new Account();
+                acc.UserName = userName;
+                acc.Password = passWord;
+                //Lấy quyền của tài khoản có userName và passWord này
+                acc.Roles = (from a in db.Roles
+                             join b in db.UserInRoles
+                             on a.IDRole equals b.IDRole
+                             where b.MaTaiKhoan.Equals(result.MaTaiKhoan)
+                             select a.RoleName).ToList();
+                return acc;
             }
             else
             {
-                return false;
+                return null;
             }
         }
         //Lấy tài khoản thông qua tên tài khoản

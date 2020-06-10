@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Model.EF;
 using Model.DAO;
 using ThuVienOnline.Areas.Admin.Models;
 
@@ -23,13 +24,9 @@ namespace ThuVienOnline.Areas.Admin.Controllers
                 TaiKhoanDAO dao = new TaiKhoanDAO();
                 var result = dao.Login(model.UserName, model.PassWord);
                 //Kiểm tra tài khoản đó nếu đúng thì tạo session cho user này
-                if (result)
+                if (result != null)
                 {
-                    var user = dao.GetByName(model.UserName);
-                    var userSession = new UserLogin();
-                    userSession.UserName = user.TenDangNhap;
-                    userSession.UserID = user.MaTaiKhoan;
-                    Session.Add(Common.CommonConst.USER_SESSION, userSession);
+                    Session["UserLogin"] = result;
                     return RedirectToAction("Index", "Home");
                 }
                 else
