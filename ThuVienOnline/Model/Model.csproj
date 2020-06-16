@@ -71,6 +71,7 @@
     <Compile Include="DAO\TheThuVienDAO.cs" />
     <Compile Include="EF\Account.cs" />
     <Compile Include="EF\DocGia.cs" />
+    <Compile Include="EF\GroupMuon.cs" />
     <Compile Include="EF\Muon.cs" />
     <Compile Include="EF\NhanVien.cs" />
     <Compile Include="EF\NXB.cs" />

@@ -297,6 +297,7 @@
     <Content Include="Areas\Admin\Views\TheThuVien\Create.cshtml" />
     <Content Include="Areas\Admin\Views\TheThuVien\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\TheThuVien\PartialViewXem.cshtml" />
+    <Content Include="Areas\Admin\Views\TheThuVien\MuonSach.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

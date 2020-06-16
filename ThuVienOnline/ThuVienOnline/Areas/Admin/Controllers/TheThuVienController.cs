@@ -69,9 +69,37 @@ namespace ThuVienOnline.Areas.Admin.Controllers
         }
         public ActionResult MuonFromTheThuVien(int id)
         {
-            ViewBag.ID = id;
+            ViewBag.IDThe = id;
             var modelMuon = new TheThuVienDAO().MuonListAllPaging(id, 1, 10);
             return PartialView("PartialViewXem" , modelMuon);
+        }
+        public ActionResult MuonSachView(int id)
+        {
+            var sachview = new SachDAO().SachListPaging(1, 10);
+            ViewBag.IDThe = id;
+            return PartialView("MuonSach", sachview);
+        }
+        [HttpPost]
+        public ActionResult Muon(int IDSach, int IDThe, int SoLuongSach)
+        {
+            new TheThuVienDAO().InsertMuon(IDThe, IDSach, SoLuongSach);
+            ViewBag.IDThe = IDThe;
+            var modelMuon = new TheThuVienDAO().MuonListAllPaging(IDThe, 1, 10);
+            return PartialView("PartialViewXem", modelMuon);
+        }
+        [HttpPost]
+        public ActionResult Tra(int IDSach, int IDThe)
+        {
+            new TheThuVienDAO().DeleteMuon(IDThe, IDSach);
+            ViewBag.IDThe = IDThe;
+            var modelMuon = new TheThuVienDAO().MuonListAllPaging(IDThe, 1, 10);
+            return PartialView("PartialViewXem", modelMuon);
+        }
+        [HttpPost]
+        public JsonResult ChangeTrangThai(int IDThe)
+        {
+            var dao = new TheThuVienDAO().ChangeTrangThai(IDThe);
+            return Json(new { status = dao }, JsonRequestBehavior.AllowGet);
         }
     }
 }

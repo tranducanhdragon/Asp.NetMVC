@@ -44,6 +44,31 @@ namespace Model.DAO
                 return false;
             }
         }
+        public bool ChangeTrangThai(int id)
+        {
+            var the = db.TheThuViens.Find(id);
+            bool tt = the.TrangThai;
+            the.TrangThai = !tt;
+            db.SaveChanges();
+            return the.TrangThai;
+        }
+        public void InsertMuon(int idThe, int idSach, int soluong)
+        {
+            var muon = new Muon();
+            muon.IDThe = idThe;
+            muon.MaSach = idSach;
+            muon.SoLuongSach = soluong;
+            db.Muons.Add(muon);
+            db.SaveChanges();
+        }
+        public void DeleteMuon(int idThe, int idSach)
+        {
+            var muon = (from a in db.Muons
+                        where a.IDThe == idThe && a.MaSach == idSach
+                        select a).ToList();
+            db.Muons.RemoveRange(muon);
+            db.SaveChanges();
+        }
         public bool Delete(int id)
         {
             try
@@ -67,9 +92,15 @@ namespace Model.DAO
         {
             return db.TheThuViens.SingleOrDefault(tl => tl.IDThe == id);
         }
-        public IEnumerable<Muon> MuonListAllPaging(int idthe, int page, int pageSize)
+        //thông kê số lượng sách mượn theo mã thẻ và mã sách
+        public IEnumerable<GroupMuon> MuonListAllPaging(int idthe, int page, int pageSize)
         {
-            return db.Muons.OrderByDescending(x => x.IDMuon).Where(x => x.IDThe == idthe).ToPagedList(page, pageSize);
+            return db.Muons.GroupBy(x =>new { x.IDThe, x.MaSach}).Select(y=>new GroupMuon()
+            {
+                IDThe = y.Key.IDThe,
+                MaSach = y.Key.MaSach,
+                SoLuongSach = y.Sum(x=>x.SoLuongSach),
+            }).OrderByDescending(x=>x.IDThe).Where(x=>x.IDThe == idthe).ToPagedList(1, 10);
         }
         public IEnumerable<Tra> TraListAllPaging(int idthe, int page, int pageSize)
         {

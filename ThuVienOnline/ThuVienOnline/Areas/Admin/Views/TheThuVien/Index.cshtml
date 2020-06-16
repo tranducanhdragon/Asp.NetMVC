@@ -23,6 +23,7 @@
                         <th>Ngày hết hạn</th>
                         <th>Trạng thái</th>
                         <th>Công cụ</th>
+                        <th>Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,12 +33,15 @@
                             <td>@item.IDThe</td>
                             <td>@item.NgayTao</td>
                             <td>@item.NgayHetHan</td>
-                            <td>@item.TrangThai</td>
+                            <td><a id="tt_@item.IDThe" href="javascript:ChangeTrangThai(@item.IDThe)">@(item.TrangThai ? "Hoạt động" : "Hết hạn")</a></td>
                             <td>
                                 <a href="javascript:GetMuonFromTheThuVien(@item.IDThe)">Xem</a>
                                 <a href="/Admin/TheThuVien/Edit/@item.IDThe">Sửa</a>
                                 @*Dùng Ajax từ file js*@
                                 <a href="javascript:XoaTheThuVien(@item.IDThe)">Xóa</a>
+                            </td>
+                            <td>
+                                <a href="javascript:MuonSachView(@item.IDThe)">Mượn</a>
                             </td>
                         </tr>
                     }
@@ -45,9 +49,8 @@
             </table>
         </div>
         @* Render PartialViewXem *@
-        <div id="MuonFromThe">
-        </div>
+        <div id="MuonFromThe"></div>
+        @*PartialViewMuonSach*@
+        <div id="MuonSachView"></div>
     </div>
 </div>
-
-
